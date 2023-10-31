@@ -1,0 +1,149 @@
+//--------------------------------------
+// CHOSEN
+//--------------------------------------
+.chosen-container {
+  border: 0;
+  padding: 0;
+  margin-top: 0.25rem;
+  width: 100% !important
+}
+.chosen-container,
+.chosen-container .chosen-choices {
+  background: #fff;
+}
+.chosen-container.error .chosen-choices,
+.chosen-container.error .chosen-single {
+  border: 0;
+}
+
+//--------------------------------------
+// CHOSEN: SEARCH
+//--------------------------------------
+.chosen-container .chosen-choices li.search-choice {
+  background: #f2f2f2;
+  border: 0;
+  box-shadow: 0 0 transparent;
+  padding: 10px 30px 10px 10px;
+  outline: none;
+  font-size: .75rem;
+  line-height: .9375rem;
+  padding: 5px 30px 5px 10px
+}
+.chosen-container .chosen-choices li.search-choice .search-choice-close {
+  top: 7px;
+  right: 10px
+}
+.chosen-container-active .chosen-choices {
+  box-shadow: 0 0 transparent
+}
+.chosen-container .chosen-search-input {
+  font-family: inherit !important
+}
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container-single .chosen-single {
+  background: #fff;
+  border-color: $border-color;
+  box-shadow: 0 0 transparent
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+  border: 0;
+  left: 0;
+  -webkit-box-shadow: -4px 4px 20px #e8ebec;
+          box-shadow: -4px 4px 20px #e8ebec;
+}
+
+//--------------------------------------
+// CHOSEN: MULTIPLE CHOICES
+//--------------------------------------
+.chosen-container-multi {
+  border: 1px solid #dee2e6;
+  padding: 10px 30px 10px 10px;
+  width: 100% !important
+}
+.chosen-container-multi .chosen-choices li.search-field {
+  padding-left: 23px;
+  position: relative;
+  width: 100%
+}
+
+//--------------------------------------
+// CHOSEN: DROPDOWN
+//--------------------------------------
+.chosen-container .chosen-drop {
+  border: 1px solid #dee2e6;
+  padding: 0;
+}
+.chosen-container.error .chosen-choices,
+.chosen-container.error .chosen-single {
+  border: 0;
+}
+
+//--------------------------------------
+// CHOSEN: SINGLE CHOICE
+//--------------------------------------
+.chosen-container-single .chosen-single {
+  border: 1px solid $border-color;
+  border-radius: var(--bs-border-radius);
+  box-shadow: 0 0 transparent;
+  height: auto;
+  line-height: $line-height-base;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  outline: none;
+
+  span {
+    margin-right: 0;
+  }
+}
+
+.chosen-container-single .chosen-single div b {
+  background-position: 0 12px
+}
+.chosen-container-single .chosen-search input[type=text] {
+  background-position: 100% -32px;
+  background-size: 85px 60px !important;
+  border: 1px solid $border-color;
+  line-height: $line-height-base;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+}
+.chosen-container-single .chosen-search {
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  padding: 13px 20px;
+}
+
+//--------------------------------------
+// CHOSEN: RESULTS
+//--------------------------------------
+.chosen-container .chosen-results {
+  margin: 0;
+  padding: 0;
+}
+.chosen-container .chosen-results li {
+  color: #525866;
+  line-height: normal;
+  padding: 13px 20px;
+}
+.chosen-container .chosen-results li:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5
+}
+.chosen-container .chosen-results li.highlighted {
+  background: #f7f8fa;
+  color: #525866;
+}
+
+//--------------------------------------
+// CHOSEN: FLOATING RESET
+//--------------------------------------
+.form-floating {
+  .chosen-container-single .chosen-single,
+  .chosen-container-multi .chosen-choices {
+    border: 0;
+    padding: 0;
+  }
+  .chosen-container-multi {
+    height: auto;
+    .chosen-choices .search-field {
+      padding: 0;
+    }
+  }
+}

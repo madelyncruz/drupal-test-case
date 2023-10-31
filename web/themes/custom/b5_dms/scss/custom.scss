@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+// Root.
+:root {
+  // Generate spacers.
+  @each $spacer, $value in $primary-spacers {
+    --#{$prefix}spacing-#{$spacer}: #{$value};
+  }
+}
+
+// General.
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Image.
+img {
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+}
+
+// Typography.
+p:last-child {
+  margin-bottom: 0;
+}
+
+.block-system-branding-block {
+  --site-branding-gap: var(--bs-spacing-2);
+  --site-branding-margin-x: 0;
+  --site-branding-margin-y: 0;
+  --site-branding-padding-x: 0;
+  --site-branding-padding-y: 0;
+  --site-branding-logo-width: 32px;
+  --site-branding-logo-opacity: 0.7;
+  --site-branding-slogan-color: var(--bs-white-600);
+  --site-branding-slogan-ls: 1px;
+  --site-branding-slogan-tt: uppercase;
+  --site-branding-title-color: var(--bs-white);
+
+  .navbar-brand {
+    align-items: flex-start;
+    display: flex;
+    font-weight: $font-weight-bold;
+    gap: var(--site-branding-gap);
+    margin: var(--site-branding-margin-y) var(--site-branding-margin-x);
+    padding: var(--site-branding-padding-y) var(--site-branding-padding-x);
+  }
+  .site-logo img {
+    min-width: var(--site-branding-logo-width);
+    opacity: var(--site-branding-logo-opacity);
+    width: var(--site-branding-logo-width);
+  }
+  .site-title a {
+    color: var(--site-branding-title-color);
+  }
+  .site-slogan {
+    color: var(--site-branding-slogan-color);
+    letter-spacing: var(--site-branding-slogan-ls);
+    text-transform: var(--site-branding-slogan-tt);
+  }
+}

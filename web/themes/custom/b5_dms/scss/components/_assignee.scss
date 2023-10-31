@@ -1,0 +1,16 @@
+.js-assignee {
+  --assignee-form-item-mb: 0;
+  --assignee-color: var(--bs-primary);
+  --assignee-fs: 12px;
+  --assignee-mt: 4px;
+
+  .form-item {
+    margin-bottom: var(--assignee-form-item-mb);
+  }
+  .assignee {
+    color: var(--assignee-color);
+    cursor: pointer;
+    font-size: var(--assignee-fs);
+    margin-top: var(--assignee-mt);
+  }
+}

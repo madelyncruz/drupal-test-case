@@ -1,0 +1,22 @@
+<div{{ attributes.addClass(classes) }}>
+  <div class="form-item-inner">
+    {{ children }}
+    <label class="btn btn-outline-primary{{ label['#required'] ? ' form-required'}}" for="{{ element['#id'] }}">
+      {{ element['#title']|raw }}
+    </label>
+  </div>
+
+  {% if description.content.description or description.content %}
+  <div class="form-item-description">
+  {% if description.content.description %}
+    <small{{ description.attributes.addClass('form-description description text-muted') }}>
+      {{- description.content.description -}}
+    </small>
+    {% elseif description.content %}
+    <small{{ description.attributes.addClass('form-description description text-muted') }}>
+      {{- description.content -}}
+    </small>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

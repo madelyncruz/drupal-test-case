@@ -1,0 +1,15 @@
+global-styling:
+  js:
+    js/script.js: {}
+  css:
+    theme:
+      css/style.css: {}
+
+twbs-bootstrap-icons:
+  css:
+    theme:
+      /libraries/twbs-bootstrap-icons/font/bootstrap-icons.min.css: { minified: true }
+
+twbs:
+  dependencies:
+    - b5_dms/twbs-bootstrap-icons

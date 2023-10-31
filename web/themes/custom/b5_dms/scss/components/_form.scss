@@ -1,0 +1,41 @@
+// Email.
+.form-email,
+.form-textarea-wrapper {
+  margin-top: 0.25rem;
+}
+
+// Form item and actions.
+form {
+  --form-item-description-fs: 12px;
+  --form-item-description-mt: 4px;
+}
+
+.form-actions {
+  margin-bottom: 0;
+}
+.form-item {
+  margin-bottom: var(--bs-spacing-4);
+  .description {
+    font-size: var(--form-item-description-fs);
+    margin-top: var(--form-item-description-mt);
+  }
+}
+.form-item,
+.form-actions {
+  margin-top: 0;
+}
+
+// User form.
+.user-pass {
+  --user-pass-form-item-name-mb: 4px;
+  --user-pass-form-item-name-text-fs: 12px;
+  --user-pass-form-item-name-text-mb: var(--bs-spacing-4);
+
+  .form-item-name {
+    margin-bottom: var(--user-pass-form-item-name-mb);
+    + p {
+      font-size: var(--user-pass-form-item-name-text-fs);
+      margin-bottom: var(--user-pass-form-item-name-text-mb);
+    }
+  }
+}

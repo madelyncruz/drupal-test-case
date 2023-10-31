@@ -1,0 +1,8 @@
+.dropdown-nav.nav {
+  --dropdown-nav-nav-link-px: 0;
+  --dropdown-nav-nav-link-py: var(--bs-spacing-1);
+
+  .nav-item .nav-link {
+    padding: var(--dropdown-nav-nav-link-py) var(--dropdown-nav-nav-link-px);
+  }
+}

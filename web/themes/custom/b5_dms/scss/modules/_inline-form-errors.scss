@@ -1,0 +1,13 @@
+.form-item--error-message {
+  --inline-form-errors-bg-color: var(--bs-danger-bg-subtle);
+  --inline-form-errors-fs: 12px;
+  --inline-form-errors-px: var(--bs-spacing-1);
+  --inline-form-errors-py: var(--bs-spacing-1);
+  --inline-form-errors-mt: var(--bs-spacing-1);
+
+  background-color: #ffe7e7;
+  background-color: var(--inline-form-errors-bg-color);
+  font-size: var(--inline-form-errors-fs);
+  padding: var(--inline-form-errors-py) var(--inline-form-errors-px);
+  margin-top: var(--inline-form-errors-mt);
+}

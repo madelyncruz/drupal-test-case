@@ -1,0 +1,50 @@
+@import 'variables';
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+// $enable-important-utilities:  false;
+
+
+// Color system.
+// scss-docs-start dark-color-variables
+$blue:                              #154aff;
+$dark:                              #0c0b24;
+// scss-docs-end dark-color-variables
+
+
+// Navs
+
+// scss-docs-start nav-variables
+$nav-link-font-weight:              600;
+// scss-docs-end nav-variables
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+
+// scss-docs-start headings-variables
+$headings-font-family:              'Montserrat', sans-serif;
+$headings-font-weight:               700;
+// scss-docs-end headings-variables
+
+
+// Cards
+
+// scss-docs-start card-variables
+$card-cap-padding-x:                     $primary-spacer-4;
+$card-cap-padding-y:                     $primary-spacer-3;
+$card-spacer-y:                          $primary-spacer-4;
+$card-spacer-x:                          $primary-spacer-4;
+// scss-docs-end card-variables
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+// scss-docs-start btn-variables
+$btn-font-size:                          14px;
+// scss-docs-end btn-variables

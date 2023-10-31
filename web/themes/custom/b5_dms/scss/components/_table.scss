@@ -1,0 +1,24 @@
+//--------------------------------------
+// TABLE
+//--------------------------------------
+.table {
+  --table-border-color: var(--bs-light-border-subtle);
+  --table-border-size: 1px;
+  --table-thead-border-color: var(--bs-border-color);
+  --table-thead-border-size: 3px;
+  --table-thead-color: var(--bs-gray);
+  --table-thead-fs: 13px;
+
+  border: var(--table-border-size) solid var(--table-border-color);
+
+  thead {
+    border-bottom: var(--table-thead-border-size) solid var(--table-thead-border-color);
+  }
+  thead th {
+    color: var(--table-thead-color);
+    font-size: var(--table-thead-fs);
+    a {
+      text-decoration: none;
+    }
+  }
+}

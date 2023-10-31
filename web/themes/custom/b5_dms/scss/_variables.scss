@@ -1,0 +1,40 @@
+
+// Spacers.
+// scss-docs-start spacer-variables
+$primary-spacers: (
+  0: 0,
+  1: 8px,
+  2: 12px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 40px,
+  7: 48px,
+  8: 56px,
+  9: 64px,
+  10: 72px,
+  11: 80px,
+  12: 96px,
+  13: 120px,
+);
+
+$primary-spacer-1: map-get($primary-spacers, 1);
+$primary-spacer-2: map-get($primary-spacers, 2);
+$primary-spacer-3: map-get($primary-spacers, 3);
+$primary-spacer-4: map-get($primary-spacers, 4);
+$primary-spacer-5: map-get($primary-spacers, 5);
+$primary-spacer-6: map-get($primary-spacers, 6);
+$primary-spacer-7: map-get($primary-spacers, 7);
+$primary-spacer-8: map-get($primary-spacers, 8);
+$primary-spacer-9: map-get($primary-spacers, 9);
+$primary-spacer-10: map-get($primary-spacers, 10);
+$primary-spacer-11: map-get($primary-spacers, 11);
+$primary-spacer-12: map-get($primary-spacers, 12);
+$primary-spacer-13: map-get($primary-spacers, 13);
+// scss-docs-end spacer-variables
+
+// scss-docs-start theme-assets-variables
+$theme-assets-path:                            './../assets';
+$asset-jpg:                                    './../assets/jpg';
+$asset-png:                                    './../assets/png';
+// scss-docs-end theme-assets-variables

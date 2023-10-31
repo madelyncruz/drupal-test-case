@@ -1,0 +1,15 @@
+.user-avatar {
+  --user-avatar-picture-radius: 48px;
+  --user-avatar-picture-height: 48px;
+  --user-avatar-picture-width: 48px;
+
+  .contextual {
+    display: none;
+  }
+
+  img {
+    border-radius: var(--user-avatar-picture-radius);
+    height: var(--user-avatar-picture-height);
+    width: var(--user-avatar-picture-width);
+  }
+}

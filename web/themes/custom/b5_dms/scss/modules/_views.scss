@@ -1,0 +1,90 @@
+
+//--------------------------------------
+// VIEWS: ALIGN RIGHT
+//--------------------------------------
+.views-align-right {
+  background-color: #fff;
+  position: sticky;
+  right: -1px;
+  text-align: right;
+  z-index: 1;
+
+  &:before {
+    background-color: rgba(38,47,64,.1);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 2;
+  }
+}
+
+//--------------------------------------
+// VIEWS: EXPOSED FILTER
+//--------------------------------------
+.views-exposed-form {
+  --views-exposed-form-inline-bg-color: #f5f6f7;
+  --views-exposed-form-inline-rounded: var(--bs-border-radius);
+  --views-exposed-form-inline-gap: var(--bs-spacing-3);
+  --views-exposed-form-inline-px: var(--bs-spacing-3);
+  --views-exposed-form-inline-py: var(--bs-spacing-3);
+  --views-exposed-form-inline-mb: var(--bs-spacing-3);
+  --views-exposed-form-inline-form-item-mb: 0;
+
+  .form--inline {
+    align-items: flex-end;
+    width: 100%;
+    @include make-row();
+  }
+
+  background-color: var(--views-exposed-form-inline-bg-color);
+  border-radius: var(--views-exposed-form-inline-rounded);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--views-exposed-form-inline-gap);
+  margin-bottom: var(--views-exposed-form-inline-mb);
+  padding: var(--views-exposed-form-inline-py) var(--views-exposed-form-inline-px);
+
+  .form-item {
+    margin-bottom: var(--views-exposed-form-inline-form-item-mb);
+  }
+
+  .form--inline > div {
+    @include make-col-ready();
+
+    .form-exposed-filter-col-md-3s & {
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+    }
+    .form-exposed-filter-col-md-4s & {
+      @include media-breakpoint-up(md) {
+        @include make-col(4);
+      }
+    }
+    .form-exposed-filter-col-md-6s & {
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+        max-width: 50%;
+      }
+    }
+  }
+
+  label {
+    font-size: 12px;
+  }
+  .form-submit {
+    width: 100%;
+  }
+}
+
+//--------------------------------------
+// VIEWS: TABLE
+//--------------------------------------
+.views-table .dropbutton-wrapper.dropbutton-multiple {
+  margin: 0;
+  padding: 0;
+}

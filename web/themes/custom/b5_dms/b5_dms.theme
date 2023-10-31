@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * @file
+ * B5 data management system theme file.
+ */
+
+use Drupal\Core\Routing\RouteObjectInterface;
+use Drupal\node\NodeInterface;
+use Drupal\node\NodeTypeInterface;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function b5_dms_preprocess_form(&$variables) {
+  $variables['page_title'] = _b5_dms_page_title() ?? t('Edit');
+}
+
+/**
+ * Implements theme_preprocess_page().
+ *
+ * Make the container fluid for authenticated users.
+ */
+function b5_dms_preprocess_page(&$variables) {
+  $user = \Drupal::currentUser();
+
+  $variables['b5_top_container'] = $user->isAnonymous() ? theme_get_setting('b5_top_container') : 'container-fluid';
+  $variables['b5_is_authenticated'] = $user->isAuthenticated();
+  $variables['page_title'] = _b5_dms_page_title();
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function b5_dms_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $element = $variables['elements'];
+  $plugin_id = $element['#plugin_id'] ?? NULL;
+
+  if ($plugin_id === 'views_block:b5_dms_user-block_avatar') {
+    $suggestions[] = 'block__user_avatar';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function b5_dms_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  $request = \Drupal::request();
+
+  // Default node form theme suggestion.
+  if (is_array($element['#theme']) && in_array('node_form', $element['#theme'])) {
+    $suggestions[] = 'form__node_form';
+  }
+
+  // Node form per ID theme suggestion.
+  if (isset($element['#form_id'])) {
+    $suggestions[] = 'form__' . str_replace('-', '_', $element['#form_id']);
+  }
+
+  // Node form per bundle theme suggestion.
+  $node_type = $request->attributes->get('node_type');
+  if ($node_type instanceof NodeTypeInterface) {
+    $suggestions[] = 'form__node_' . str_replace('-', '_', $node_type->id()) . '_form';
+  }
+
+  // Node edit form per bundle theme suggestion.
+  $node = $request->attributes->get('node');
+  if ($node instanceof NodeInterface) {
+    $suggestions[] = 'form__node_' . str_replace('-', '_', $node->bundle()) . '_form';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function b5_dms_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if ($variables['menu_name'] === 'account') {
+    $suggestions[] = 'menu__dropdown';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function b5_dms_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $route_match = \Drupal::routeMatch();
+
+  // Use a generic template for user form pages.
+  $user_form_routes = ['user.login', 'user.pass', 'user.register'];
+  if (in_array($route_match->getRouteName(), $user_form_routes)) {
+    $suggestions[] = 'page__user_forms';
+  }
+}
+
+/**
+ * Get the page title from requested route.
+ *
+ * @return string
+ *   The resolver title.
+ */
+function _b5_dms_page_title() {
+  $request = \Drupal::request();
+  $page_title = '';
+  if ($route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT)) {
+    $resolver_title = \Drupal::service('title_resolver')->getTitle($request, $route);
+  }
+  if (isset($resolver_title) && !empty($resolver_title)) {
+    $page_title = $resolver_title;
+  }
+  return $page_title;
+}

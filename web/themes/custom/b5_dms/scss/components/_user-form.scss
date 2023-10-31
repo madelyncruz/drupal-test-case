@@ -1,0 +1,48 @@
+.user-form {
+  --user-form-bg-container-mw: 550px;
+  --user-form-bg-color: var(--bs-black);
+  --user-form-bg-blur: var(--bs-spacing-1);
+  --user-form-bg-opacity: 0.5;
+
+  --user-form-px: var(--bs-spacing-3);
+  --user-form-py: var(--bs-spacing-3);
+  --user-form-inner-bg-color: var(--bs-white);
+  --user-form-inner-px: var(--bs-spacing-5);
+  --user-form-inner-py: var(--bs-spacing-5);
+  --user-form-action-btn: var(--bs-spacing-4);
+
+  align-items: center;
+  background-color: var(--user-form-bg-color);
+  display: flex;
+  min-height: 100%;
+  padding: var(--user-form-py) var(--user-form-px);
+
+  &::before {
+    background: url(#{$asset-jpg}/bg-user-form.jpeg);
+    content: "";
+    filter: blur(var(--user-form-bg-blur));
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: var(--user-form-bg-opacity);
+  }
+
+  &-inner {
+    background-color: var(--user-form-inner-bg-color);
+    padding: var(--user-form-inner-py) var(--user-form-inner-px);
+    position: relative;
+    z-index: 10;
+  }
+
+  .container {
+    max-width: var(--user-form-bg-container-mw);
+  }
+  .form-actions {
+    .btn {
+      width: 100%;
+    }
+  }
+}

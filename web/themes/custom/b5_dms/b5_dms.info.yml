@@ -1,0 +1,38 @@
+name: 'B5 DMS'
+type: theme
+description: 'Base theme for data management systems based on Bootstrap 5 theme.'
+core_version_requirement: '^9.4 || ^10'
+base theme: bootstrap5
+version: 1.0.1
+libraries:
+  - b5_dms/twbs
+  - b5_dms/global-styling
+dependencies:
+ - twig_tweak:twig_tweak
+
+ckeditor_stylesheets:
+  - css/style.css
+ckeditor5-stylesheets:
+  - css/ck5style.css
+
+regions:
+  topbar_left: Topbar left
+  topbar_right: Topbar right
+  banner: Banner
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  sidebar_nav: 'Sidebar navigation'
+  footer: Footer
+
+libraries-override:
+  bootstrap5/global-styling: false
+  bootstrap5/base:
+    css:
+      component:
+        css/components/inline-form.css: false

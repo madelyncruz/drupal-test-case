@@ -1,0 +1,27 @@
+//--------------------------------------
+// DATETIME FLATPICKER WIDGET
+//--------------------------------------
+.flatpicker-textfield {
+  padding-right: var(--bs-spacing-5);
+  position: relative;
+
+  i {
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: -2px;
+  }
+}
+
+.field--widget-datetime-flatpickr {
+  --widget-flatpickr-form-item-bg: 0;
+  --widget-flatpickr-input-ms: 0;
+
+  .form-item.form-type-textfield {
+    background: var(--widget-flatpickr-form-item-bg);
+  }
+  .form-item input.form-control {
+    background-color: var(--bs-white);
+    margin-left: var(--widget-flatpickr-input-ms);
+  }
+}
