@@ -8,20 +8,42 @@
     "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
     "chat": "https://www.drupal.org/node/314178"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "feeds_http_auth_fetcher": {
+      "type": "package",
+      "package": {
+        "name": "d10/feeds_http_auth_fetcher",
+        "version": "1.0.3",
+        "type": "drupal-module",
+        "extra": {
+          "installer-name": "feeds_http_auth_fetcher"
+        },
+        "dist": {
+          "url": "https://github.com/madelyncruz/feeds_http_auth_fetcher/archive/refs/heads/1.0.x.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "~2.0"
+        }
+      }
     }
-  ],
+  },
   "require": {
     "composer/installers": "^2.0",
+    "cweagans/composer-patches": "^1.7",
+    "d10/feeds_http_auth_fetcher": "^1.0",
     "drupal/admin_toolbar": "^3.4",
     "drupal/backup_migrate": "^5.0",
     "drupal/core-composer-scaffold": "^10.1",
     "drupal/core-project-message": "^10.1",
     "drupal/core-recommended": "^10.1",
     "drupal/feeds": "^3.0@beta",
+    "drupal/feeds_ex": "^1.0@beta",
+    "drupal/feeds_tamper": "^2.0@beta",
     "drupal/module_filter": "^4.0",
     "drush/drush": "^12.4",
     "vlucas/phpdotenv": "^3.0"
@@ -29,7 +51,7 @@
   "conflict": {
     "drupal/drupal": "*"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
     "allow-plugins": {
@@ -37,7 +59,8 @@
       "drupal/core-composer-scaffold": true,
       "drupal/core-project-message": true,
       "phpstan/extension-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "cweagans/composer-patches": true
     },
     "sort-packages": true
   },
@@ -50,6 +73,7 @@
         "web-root": "web/"
       }
     },
+    "enable-patching": true,
     "installer-paths": {
       "web/core": [
         "type:drupal-core"
@@ -78,6 +102,15 @@
       "web/themes/custom/{$name}": [
         "type:drupal-custom-theme"
       ]
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {
+      "d10/feeds_http_auth_fetcher": {
+        "3311889: Compatibility with latest feeds module": "https://git.drupalcode.org/project/feeds_http_auth_fetcher/-/merge_requests/6.patch",
+        "3188409: Allow custom header?": "https://www.drupal.org/files/issues/2023-02-17/3188409-7-custom-header.patch"
+      }
     },
     "drupal-core-project-message": {
       "include-keys": [
