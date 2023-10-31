@@ -30,14 +30,37 @@
           "composer/installers": "~2.0"
         }
       }
+    },
+    "views_selective_filters": {
+      "type": "package",
+      "package": {
+        "name": "d10/views_selective_filters",
+        "version": "dev-1.x",
+        "type": "drupal-module",
+        "extra": {
+          "installer-name": "views_selective_filters"
+        },
+        "dist": {
+          "url": "https://github.com/madelyncruz/views_selective_filters/archive/refs/heads/8.x-1.x.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "~2.0"
+        }
+      }
     }
   },
   "require": {
     "composer/installers": "^2.0",
     "cweagans/composer-patches": "^1.7",
     "d10/feeds_http_auth_fetcher": "^1.0",
+    "d10/views_selective_filters": "dev-1.x",
     "drupal/admin_toolbar": "^3.4",
+    "drupal/avatar_field_formatter": "^2.0",
     "drupal/backup_migrate": "^5.0",
+    "drupal/better_exposed_filters": "^6.0",
+    "drupal/bootstrap5": "^3.0",
+    "drupal/chosen": "^4.0",
     "drupal/core-composer-scaffold": "^10.1",
     "drupal/core-project-message": "^10.1",
     "drupal/core-recommended": "^10.1",
@@ -45,8 +68,10 @@
     "drupal/feeds_ex": "^1.0@beta",
     "drupal/feeds_tamper": "^2.0@beta",
     "drupal/module_filter": "^4.0",
+    "drupal/twig_tweak": "^3.2",
     "drush/drush": "^12.4",
-    "vlucas/phpdotenv": "^3.0"
+    "vlucas/phpdotenv": "^3.0",
+    "wikimedia/composer-merge-plugin": "^2.1"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -60,7 +85,8 @@
       "drupal/core-project-message": true,
       "phpstan/extension-installer": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "cweagans/composer-patches": true
+      "cweagans/composer-patches": true,
+      "wikimedia/composer-merge-plugin": true
     },
     "sort-packages": true
   },
@@ -72,6 +98,12 @@
       "locations": {
         "web-root": "web/"
       }
+    },
+    "merge-plugin": {
+      "include": [
+        "composer.libraries.json",
+        "web/modules/contrib/chosen/composer.libraries.json"
+      ]
     },
     "enable-patching": true,
     "installer-paths": {
@@ -107,9 +139,17 @@
       "drupal/core": "-p2"
     },
     "patches": {
+      "drupal/avatar_field_formatter": {
+        "3346646: The file_url_generator service is not passed to the class constructor": "https://www.drupal.org/files/issues/2023-10-14/avatar_field_formatter-d10-3346646.patch",
+        "3316438: Add option to configure the foreground and border size": "https://www.drupal.org/files/issues/2022-10-20/add-configure-option-foreground-and-border-size-3316438.patch",
+        "3169434: SVG option does not use the defined Font-Familly": "https://www.drupal.org/files/issues/2022-01-16/3169434-2.patch"
+      },
       "d10/feeds_http_auth_fetcher": {
         "3311889: Compatibility with latest feeds module": "https://git.drupalcode.org/project/feeds_http_auth_fetcher/-/merge_requests/6.patch",
         "3188409: Allow custom header?": "https://www.drupal.org/files/issues/2023-02-17/3188409-7-custom-header.patch"
+      },
+      "d10/views_selective_filters": {
+        "2804485: SQL error when adding multiple fields of the same type": "https://www.drupal.org/files/issues/2020-07-13/views_selective_filters-sql_error-2804485-9-8.patch"
       }
     },
     "drupal-core-project-message": {
@@ -133,5 +173,15 @@
         "      composer remove drupal/core-project-message"
       ]
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "find web vendor -name '.git' | xargs rm -rf",
+      "find web vendor -name '.github' | xargs rm -rf"
+    ],
+    "post-update-cmd": [
+      "find web vendor -name '.git' | xargs rm -rf",
+      "find web vendor -name '.github' | xargs rm -rf"
+    ]
   }
 }

@@ -1,0 +1,28 @@
+{
+  "name": "drupal-test-case/drupal-test-case",
+  "type": "vcs",
+  "license": "GPL-2.0+",
+  "repositories": {
+    "twbs-bootstrap-icons": {
+      "type": "package",
+      "package": {
+        "name": "twbs/bootstrap-icons",
+        "version": "1.10.5",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "twbs-bootstrap-icons"
+        },
+        "dist": {
+          "url": "https://github.com/twbs/icons/archive/refs/tags/v1.10.5.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "~2.0"
+        }
+      }
+    }
+  },
+  "require": {
+    "twbs/bootstrap-icons": "1.10.5"
+  }
+}
