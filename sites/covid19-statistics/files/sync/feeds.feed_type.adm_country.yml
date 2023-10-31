@@ -1,0 +1,91 @@
+uuid: 2c0eb6d6-ff77-4509-a996-b4e42dfd7175
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.adm_country.field_text_plain_1a
+    - taxonomy.vocabulary.adm_country
+  module:
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      1396963e-9366-41d6-9d6a-ae37f66e092f:
+        character: ''
+        side: trim
+        uuid: 1396963e-9366-41d6-9d6a-ae37f66e092f
+        plugin: trim
+        source: name
+        weight: 1
+        label: 'Characters to trim'
+      98152d12-05ba-4295-9fc9-92dca31c865f:
+        invert: false
+        uuid: 98152d12-05ba-4295-9fc9-92dca31c865f
+        plugin: required
+        source: iso3_code
+        weight: 0
+        label: Required
+      23194df8-b58d-465f-97b8-c1ecfa512eef:
+        character: ''
+        side: trim
+        uuid: 23194df8-b58d-465f-97b8-c1ecfa512eef
+        plugin: trim
+        source: iso3_code
+        weight: 1
+        label: 'Characters to trim'
+label: 'Administrative divisions by country'
+id: adm_country
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: adm_country
+  langcode: zxx
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: true
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  name:
+    value: name
+    label: name
+    machine_name: name
+    type: csv
+  iso3_code:
+    value: iso3_code
+    label: iso3_code
+    machine_name: iso3_code
+    type: csv
+mappings:
+  -
+    target: name
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_text_plain_1a
+    map:
+      value: iso3_code
+    settings:
+      language: null
+    unique:
+      value: 1

@@ -1,0 +1,17 @@
+uuid: aba91531-a88d-4368-90ea-d71740e7c858
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'COVID-19 Statistics Reports'
+type: covid19_statistics_reports
+description: 'https://covid-19-statistics.p.rapidapi.com/reports'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

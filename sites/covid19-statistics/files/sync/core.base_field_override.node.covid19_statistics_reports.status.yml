@@ -1,0 +1,22 @@
+uuid: 8458af1e-5342-4a93-9179-23bb24bec775
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.covid19_statistics_reports
+id: node.covid19_statistics_reports.status
+field_name: status
+entity_type: node
+bundle: covid19_statistics_reports
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

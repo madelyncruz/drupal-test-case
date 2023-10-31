@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 93344094-6537-4246-8873-00ac9011ac7f
+name: DTC
+mail: madelyncruzmiguel@gmail.com
+slogan: 'Drupal Test Case'
+page:
+  403: ''
+  404: ''
+  front: /covid-19-statistics-reports
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

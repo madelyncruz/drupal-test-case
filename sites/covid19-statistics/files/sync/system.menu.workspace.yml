@@ -1,0 +1,8 @@
+uuid: fc3d4d1d-e618-4cf8-b9c5-78ad7a4c5431
+langcode: en
+status: true
+dependencies: {  }
+id: workspace
+label: Workspace
+description: ''
+locked: false

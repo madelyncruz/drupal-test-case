@@ -1,0 +1,41 @@
+uuid: bd898e21-01b2-43bc-9a35-3ce234e59295
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.adm_country.feeds_item
+    - field.field.taxonomy_term.adm_country.field_text_plain_1a
+    - field.field.taxonomy_term.adm_country.field_text_plain_1b
+    - taxonomy.vocabulary.adm_country
+  module:
+    - text
+id: taxonomy_term.adm_country.default
+targetEntityType: taxonomy_term
+bundle: adm_country
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text_plain_1a:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text_plain_1b:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  feeds_item: true

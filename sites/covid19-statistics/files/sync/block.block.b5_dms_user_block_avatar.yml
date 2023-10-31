@@ -1,0 +1,24 @@
+uuid: 09cc9389-6651-40fd-9639-ef566989b87a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.b5_dms_user
+  module:
+    - views
+  theme:
+    - b5_dms
+id: b5_dms_user_block_avatar
+theme: b5_dms
+region: topbar_right
+weight: 0
+provider: null
+plugin: 'views_block:b5_dms_user-block_avatar'
+settings:
+  id: 'views_block:b5_dms_user-block_avatar'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

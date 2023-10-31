@@ -1,0 +1,22 @@
+uuid: 22531219-63fb-4e6a-b9ad-68ca328dbbbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - b5_dms
+_core:
+  default_config_hash: rLo0mmytSXdMkw-ri7OQW3Mlzb-fDOBxEkdblXCCYOI
+id: b5_dms_content
+theme: b5_dms
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

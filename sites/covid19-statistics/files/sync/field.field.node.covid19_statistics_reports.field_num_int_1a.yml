@@ -1,0 +1,23 @@
+uuid: 329c1edb-c4ee-4dfa-816b-1781f7b730a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_num_int_1a
+    - node.type.covid19_statistics_reports
+id: node.covid19_statistics_reports.field_num_int_1a
+field_name: field_num_int_1a
+entity_type: node
+bundle: covid19_statistics_reports
+label: Active
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,20 @@
+uuid: 0d1a1ba2-3472-415e-9dad-32ee17ff4fb4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - b5_dms
+_core:
+  default_config_hash: ueKbyFHIi7vaSNLqvNUea647e-3SXWLnINVxLs5o6lc
+id: b5_dms_local_actions
+theme: b5_dms
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

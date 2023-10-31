@@ -1,0 +1,149 @@
+uuid: f2e1dcab-d842-4004-86a4-afba783b8854
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.covid19_statistics_reports.feeds_item
+    - field.field.node.covid19_statistics_reports.field_date_1a
+    - field.field.node.covid19_statistics_reports.field_num_dec_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1b
+    - field.field.node.covid19_statistics_reports.field_num_int_1c
+    - field.field.node.covid19_statistics_reports.field_num_int_1d
+    - field.field.node.covid19_statistics_reports.field_num_int_1e
+    - field.field.node.covid19_statistics_reports.field_num_int_1f
+    - field.field.node.covid19_statistics_reports.field_num_int_1g
+    - field.field.node.covid19_statistics_reports.field_num_int_1h
+    - field.field.node.covid19_statistics_reports.field_term_1a
+    - field.field.node.covid19_statistics_reports.field_text_plain_1a
+    - node.type.covid19_statistics_reports
+  module:
+    - datetime
+id: node.covid19_statistics_reports.default
+targetEntityType: node
+bundle: covid19_statistics_reports
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_1a:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_num_dec_1a:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1a:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1b:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1c:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1d:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1e:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1f:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1g:
+    type: number
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_num_int_1h:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_term_1a:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text_plain_1a:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  path: true
+  promote: true
+  sticky: true

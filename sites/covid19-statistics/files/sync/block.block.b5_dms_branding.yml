@@ -1,0 +1,25 @@
+uuid: da2ce1d3-c324-4505-bff6-a580b75176d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - b5_dms
+_core:
+  default_config_hash: g8alnT-RgoavAjCCKZz-BT_2v2eXv30uBoYJVqrGhFY
+id: b5_dms_branding
+theme: b5_dms
+region: sidebar_nav
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

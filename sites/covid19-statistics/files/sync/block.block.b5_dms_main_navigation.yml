@@ -1,0 +1,27 @@
+uuid: 61e9cc13-5577-4917-8cda-65eadee7bbef
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - b5_dms
+_core:
+  default_config_hash: wLP93yML0Z9ShX4Uie0YbBd1nxs2mzZPpKxBE-XK1go
+id: b5_dms_main_navigation
+theme: b5_dms
+region: nav_main
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: a3646da7-cb9f-434f-b3a0-8b734dc23af5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Administrative divisions by country'
+vid: adm_country
+description: ''
+weight: 0

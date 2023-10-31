@@ -1,0 +1,23 @@
+uuid: c266cf7c-e25d-447b-a23b-4b6edfac3f37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_num_int_1h
+    - node.type.covid19_statistics_reports
+id: node.covid19_statistics_reports.field_num_int_1h
+field_name: field_num_int_1h
+entity_type: node
+bundle: covid19_statistics_reports
+label: 'Deaths Diff'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

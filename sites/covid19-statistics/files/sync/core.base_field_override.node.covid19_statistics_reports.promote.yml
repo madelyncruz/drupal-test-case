@@ -1,0 +1,22 @@
+uuid: bf50cbb0-7a5b-4921-9bc6-d556a5c672c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.covid19_statistics_reports
+id: node.covid19_statistics_reports.promote
+field_name: promote
+entity_type: node
+bundle: covid19_statistics_reports
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

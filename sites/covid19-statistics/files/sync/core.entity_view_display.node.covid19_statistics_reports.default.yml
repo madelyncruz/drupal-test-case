@@ -1,0 +1,142 @@
+uuid: 681d356a-0393-43ba-bb64-709f44a8f7bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.covid19_statistics_reports.feeds_item
+    - field.field.node.covid19_statistics_reports.field_date_1a
+    - field.field.node.covid19_statistics_reports.field_num_dec_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1b
+    - field.field.node.covid19_statistics_reports.field_num_int_1c
+    - field.field.node.covid19_statistics_reports.field_num_int_1d
+    - field.field.node.covid19_statistics_reports.field_num_int_1e
+    - field.field.node.covid19_statistics_reports.field_num_int_1f
+    - field.field.node.covid19_statistics_reports.field_num_int_1g
+    - field.field.node.covid19_statistics_reports.field_num_int_1h
+    - field.field.node.covid19_statistics_reports.field_term_1a
+    - field.field.node.covid19_statistics_reports.field_text_plain_1a
+    - node.type.covid19_statistics_reports
+  module:
+    - datetime
+    - user
+id: node.covid19_statistics_reports.default
+targetEntityType: node
+bundle: covid19_statistics_reports
+mode: default
+content:
+  field_date_1a:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_num_dec_1a:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_num_int_1a:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_num_int_1b:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_num_int_1c:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_num_int_1d:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_num_int_1e:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_num_int_1f:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_num_int_1g:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_num_int_1h:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_term_1a:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_text_plain_1a:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true

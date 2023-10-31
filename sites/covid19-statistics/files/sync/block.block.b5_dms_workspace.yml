@@ -1,0 +1,25 @@
+uuid: 0aa2ef70-9db0-4a59-a450-6608e2222d07
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.workspace
+  module:
+    - system
+  theme:
+    - b5_dms
+id: b5_dms_workspace
+theme: b5_dms
+region: sidebar_nav
+weight: 0
+provider: null
+plugin: 'system_menu_block:workspace'
+settings:
+  id: 'system_menu_block:workspace'
+  label: Workspace
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 772f1930-7745-4d8c-b2fe-df50f07c3e4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_plain_1a
+    - node.type.covid19_statistics_reports
+id: node.covid19_statistics_reports.field_text_plain_1a
+field_name: field_text_plain_1a
+entity_type: node
+bundle: covid19_statistics_reports
+label: 'Feeds: Concatenated as Unique'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

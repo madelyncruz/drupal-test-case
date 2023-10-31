@@ -1,0 +1,216 @@
+uuid: 16833137-3df2-4be1-9dab-05c34ac1f272
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.covid19_statistics_reports.field_date_1a
+    - field.field.node.covid19_statistics_reports.field_num_dec_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1b
+    - field.field.node.covid19_statistics_reports.field_num_int_1c
+    - field.field.node.covid19_statistics_reports.field_num_int_1d
+    - field.field.node.covid19_statistics_reports.field_num_int_1e
+    - field.field.node.covid19_statistics_reports.field_num_int_1f
+    - field.field.node.covid19_statistics_reports.field_num_int_1g
+    - field.field.node.covid19_statistics_reports.field_num_int_1h
+    - field.field.node.covid19_statistics_reports.field_term_1a
+    - node.type.covid19_statistics_reports
+  module:
+    - feeds_ex
+    - feeds_http_auth_fetcher
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      8fee0b35-73f0-4385-bf92-526d61e7894d:
+        text: '[region_iso]_[region_province]'
+        uuid: 8fee0b35-73f0-4385-bf92-526d61e7894d
+        plugin: rewrite
+        source: region_province
+        weight: 0
+        label: Rewrite
+label: 'COVID-19 Statistics Reports'
+id: covid19_statistics_reports
+description: ''
+help: ''
+import_period: -1
+fetcher: httpauth
+fetcher_configuration:
+  auto_detect_feeds: 0
+  use_pubsubhubbub: 0
+  always_download: 0
+  fallback_hub: ''
+  request_timeout: '30'
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.data.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: covid19_statistics_reports
+  langcode: zxx
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  date:
+    value: date
+    label: date
+    machine_name: date
+    type: json
+  active:
+    value: active
+    label: active
+    machine_name: active
+    type: json
+  active_diff:
+    value: active_diff
+    label: active_diff
+    machine_name: active_diff
+    type: json
+  confirmed:
+    value: confirmed
+    label: confirmed
+    machine_name: confirmed
+    type: json
+  confirmed_diff:
+    value: confirmed_diff
+    label: confirmed_diff
+    machine_name: confirmed_diff
+    type: json
+  deaths:
+    value: deaths
+    label: deaths
+    machine_name: deaths
+    type: json
+  deaths_diff:
+    value: deaths_diff
+    label: deaths_diff
+    machine_name: deaths_diff
+    type: json
+  recovered:
+    value: recovered
+    label: recovered
+    machine_name: recovered
+    type: json
+  recovered_diff:
+    value: recovered_diff
+    label: recovered_diff
+    machine_name: recovered_diff
+    type: json
+  fatality_rate:
+    value: fatality_rate
+    label: fatality_rate
+    machine_name: fatality_rate
+    type: json
+  region_iso:
+    value: region.iso
+    label: region.iso
+    machine_name: region_iso
+    type: json
+  region_province:
+    value: region.province
+    label: region.province
+    machine_name: region_province
+    type: json
+mappings:
+  -
+    target: field_date_1a
+    map:
+      value: date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_num_int_1a
+    map:
+      value: active
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1b
+    map:
+      value: active_diff
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1c
+    map:
+      value: confirmed
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1d
+    map:
+      value: confirmed_diff
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1g
+    map:
+      value: deaths
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1h
+    map:
+      value: deaths_diff
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1e
+    map:
+      value: recovered
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_int_1f
+    map:
+      value: recovered_diff
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_num_dec_1a
+    map:
+      value: fatality_rate
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_term_1a
+    map:
+      target_id: region_iso
+    settings:
+      language: ''
+      reference_by: field_text_plain_1a
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: adm_country
+  -
+    target: title
+    map:
+      value: region_province
+    settings:
+      language: null
+    unique:
+      value: 1

@@ -1,0 +1,19 @@
+uuid: 0619bb16-bdc2-4592-8f08-851f82976873
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_text_plain_1b
+    - taxonomy.vocabulary.adm_country
+id: taxonomy_term.adm_country.field_text_plain_1b
+field_name: field_text_plain_1b
+entity_type: taxonomy_term
+bundle: adm_country
+label: 'Alpha-2 code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

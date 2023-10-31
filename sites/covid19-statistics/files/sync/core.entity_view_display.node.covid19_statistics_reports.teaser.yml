@@ -1,0 +1,46 @@
+uuid: 7b6d5b8d-d80e-448c-ae74-7f22795849ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.covid19_statistics_reports.feeds_item
+    - field.field.node.covid19_statistics_reports.field_date_1a
+    - field.field.node.covid19_statistics_reports.field_num_dec_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1a
+    - field.field.node.covid19_statistics_reports.field_num_int_1b
+    - field.field.node.covid19_statistics_reports.field_num_int_1c
+    - field.field.node.covid19_statistics_reports.field_num_int_1d
+    - field.field.node.covid19_statistics_reports.field_num_int_1e
+    - field.field.node.covid19_statistics_reports.field_num_int_1f
+    - field.field.node.covid19_statistics_reports.field_num_int_1g
+    - field.field.node.covid19_statistics_reports.field_num_int_1h
+    - field.field.node.covid19_statistics_reports.field_term_1a
+    - field.field.node.covid19_statistics_reports.field_text_plain_1a
+    - node.type.covid19_statistics_reports
+  module:
+    - user
+id: node.covid19_statistics_reports.teaser
+targetEntityType: node
+bundle: covid19_statistics_reports
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_date_1a: true
+  field_num_dec_1a: true
+  field_num_int_1a: true
+  field_num_int_1b: true
+  field_num_int_1c: true
+  field_num_int_1d: true
+  field_num_int_1e: true
+  field_num_int_1f: true
+  field_num_int_1g: true
+  field_num_int_1h: true
+  field_term_1a: true
+  field_text_plain_1a: true

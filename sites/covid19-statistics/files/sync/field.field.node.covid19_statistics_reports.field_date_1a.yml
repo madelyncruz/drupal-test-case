@@ -1,0 +1,21 @@
+uuid: 54f4581a-b88a-4cef-9bf0-df1b59bfb264
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_1a
+    - node.type.covid19_statistics_reports
+  module:
+    - datetime
+id: node.covid19_statistics_reports.field_date_1a
+field_name: field_date_1a
+entity_type: node
+bundle: covid19_statistics_reports
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

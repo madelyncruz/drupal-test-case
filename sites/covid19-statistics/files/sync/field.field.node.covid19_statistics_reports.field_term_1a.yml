@@ -1,0 +1,29 @@
+uuid: d17260fb-2a2c-4528-9ac1-29e552835ebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_1a
+    - node.type.covid19_statistics_reports
+    - taxonomy.vocabulary.adm_country
+id: node.covid19_statistics_reports.field_term_1a
+field_name: field_term_1a
+entity_type: node
+bundle: covid19_statistics_reports
+label: 'Region / Province'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      adm_country: adm_country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

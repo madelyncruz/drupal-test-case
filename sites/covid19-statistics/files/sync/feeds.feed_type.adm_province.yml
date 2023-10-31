@@ -1,0 +1,105 @@
+uuid: f786ea93-761b-47a7-b4e4-191a4cdea0f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.adm_country
+  module:
+    - feeds_ex
+    - feeds_http_auth_fetcher
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      0dc5032d-48d1-4f1d-b471-89e6728ae275:
+        character: ''
+        side: trim
+        uuid: 0dc5032d-48d1-4f1d-b471-89e6728ae275
+        plugin: trim
+        source: iso
+        weight: -9
+        label: 'Characters to trim'
+      36045e53-94dd-4830-b14c-f7cc48210bfa:
+        invert: false
+        uuid: 36045e53-94dd-4830-b14c-f7cc48210bfa
+        plugin: required
+        source: iso
+        weight: -10
+        label: Required
+      2d459971-fc72-4dda-9526-37acdb4a131b:
+        character: ''
+        side: trim
+        uuid: 2d459971-fc72-4dda-9526-37acdb4a131b
+        plugin: trim
+        source: province
+        weight: 0
+        label: 'Characters to trim'
+label: 'Administrative divisions by country (Regions, provinces and cities)'
+id: adm_province
+description: ''
+help: ''
+import_period: -1
+fetcher: httpauth
+fetcher_configuration:
+  auto_detect_feeds: 0
+  use_pubsubhubbub: 0
+  always_download: 0
+  fallback_hub: ''
+  request_timeout: '30'
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.data.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: adm_country
+  langcode: zxx
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  name:
+    value: name
+    label: name
+    machine_name: name
+    type: json
+  iso:
+    value: iso
+    label: iso
+    machine_name: iso
+    type: json
+  province:
+    value: province
+    label: province
+    machine_name: province
+    type: json
+mappings:
+  -
+    target: name
+    map:
+      value: province
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: parent
+    map:
+      target_id: iso
+    settings:
+      reference_by: field_text_plain_1a
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: adm_country
