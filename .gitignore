@@ -83,7 +83,7 @@ node_modules/
 error_log
 stats/
 tmp/
-/.htaccess
+.htaccess
 
 # Ignore OSX template
 *.DS_Store
